@@ -4,6 +4,9 @@ Tres agentes de IA que cooperan entre sí, construidos con **Google Agent Develo
 corre **en tu propio ordenador**: los modelos de lenguaje se sirven con [Ollama](https://ollama.com), no hace
 falta ninguna cuenta de Google ni de ningún servicio en la nube, y no se paga nada.
 
+> Antes de usarlo o adaptarlo, lee [Uso responsable](USO_RESPONSABLE.md): para qué es, qué no se debe hacer y
+> la exención de responsabilidad. Licencia [MIT](LICENSE).
+
 Es el caso práctico del trabajo final de *Inteligencia Ambiental y Sistemas Multiagente* (Máster en Sistemas
 Inteligentes, Universidad de Salamanca, curso 2026/27). La memoria completa, con la teoría, la comparativa con
 otras herramientas y la proyección a futuro, se entregó aparte en PDF; aquí está el código para replicarlo.
@@ -277,5 +280,17 @@ en dinero ni en privacidad.
   - TRM del [Banco de la República](https://www.datos.gov.co/resource/32sa-8pi3.json), vía datos.gov.co;
   - EUR/USD del BCE, vía [Frankfurter](https://frankfurter.dev).
 - Protocolo [A2A](https://a2a-protocol.org) (Linux Foundation / Agentic AI Foundation).
+
+---
+
+## Licencia y uso responsable
+
+- **Licencia:** el código se publica con la [licencia MIT](LICENSE). Puedes usarlo, copiarlo, modificarlo y
+  distribuirlo libremente, también con fines comerciales, siempre que mantengas el aviso de copyright y de
+  licencia.
+- **Sin garantía:** se ofrece "tal cual", sin garantía de ningún tipo.
+- **Responsabilidad:** el autor no responde de los daños ni de los usos indebidos que se hagan de él. Quien lo
+  use es responsable de cumplir la ley y los términos de los servicios que consulte.
+- **Más detalle:** en [USO_RESPONSABLE.md](USO_RESPONSABLE.md).
 
 Autor: Jose Iglesias · Máster en Sistemas Inteligentes · Universidad de Salamanca.
