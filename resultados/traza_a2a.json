@@ -1,0 +1,45 @@
+{
+  "escenario": "E6",
+  "app": "sma_a2a",
+  "mensaje": "¿Hoy conviene cambiar euros a pesos colombianos?",
+  "segundos": 42.9,
+  "eventos": [
+    {
+      "t": 14.2,
+      "autor": "coordinador_a2a",
+      "tipo": "llamada",
+      "detalle": "transfer_to_agent({\"agent_name\": \"agente_tasas_remoto\"})"
+    },
+    {
+      "t": 14.2,
+      "autor": "coordinador_a2a",
+      "tipo": "resultado",
+      "detalle": "{\"result\": null}"
+    },
+    {
+      "t": 14.2,
+      "autor": "coordinador_a2a",
+      "tipo": "transferencia",
+      "detalle": "→ agente_tasas_remoto"
+    },
+    {
+      "t": 25.4,
+      "autor": "agente_tasas_remoto",
+      "tipo": "llamada",
+      "detalle": "consultar_tasa_eur_cop({})"
+    },
+    {
+      "t": 25.4,
+      "autor": "agente_tasas_remoto",
+      "tipo": "resultado",
+      "detalle": "{\"minimo_90d\": 3504.69, \"fuente\": \"TRM (Banco de la República) × EUR/USD (BCE), en vivo\", \"media_90d\": 3623.19, \"maximo_90d\": 3803.5, \"fecha\": \"2026-11-02\", \"tasa_actual\": 3570.04, \"conviene_cambiar\": false, \"percentil_actual\": 26.0}"
+    },
+    {
+      "t": 42.9,
+      "autor": "agente_tasas_remoto",
+      "tipo": "texto",
+      "detalle": "La tasa actual de EUR a COP es 3570.04. En los últimos 90 días, la tasa ha fluctuado entre 3504.69 (mínimo) y 3803.5 (máximo), con una media de 3623.19. Hoy no conviene cambiar euros, ya que la tasa actual está en el percentil 26. Fuente: TRM (Banco de la República) × EUR/USD (BCE), en vivo."
+    }
+  ],
+  "estado": {}
+}

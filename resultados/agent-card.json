@@ -1,0 +1,40 @@
+{
+    "name": "agente_tasas",
+    "description": "Especialista en la tasa de cambio EUR \u2192 COP: dice si hoy conviene cambiar euros.",
+    "supportedInterfaces": [
+        {
+            "url": "http://localhost:8001",
+            "protocolBinding": "JSONRPC",
+            "protocolVersion": "1.0"
+        }
+    ],
+    "version": "0.0.1",
+    "capabilities": {
+        "streaming": true
+    },
+    "defaultInputModes": [
+        "text/plain"
+    ],
+    "defaultOutputModes": [
+        "text/plain"
+    ],
+    "skills": [
+        {
+            "id": "agente_tasas",
+            "name": "model",
+            "description": "Especialista en la tasa de cambio EUR \u2192 COP: dice si hoy conviene cambiar euros.",
+            "tags": [
+                "llm"
+            ]
+        },
+        {
+            "id": "agente_tasas-consultar_tasa_eur_cop",
+            "name": "consultar_tasa_eur_cop",
+            "description": "Consulta la tasa de cambio EUR \u2192 COP de hoy y la compara con los \u00faltimos 90 d\u00edas.\n\nReturns:\n    Un diccionario con la tasa actual, su fuente, el m\u00ednimo, la media y el m\u00e1ximo de 90 d\u00edas,\n    el percentil de la tasa actual y si conviene cambiar euros (tasa alta = buen momento).",
+            "tags": [
+                "llm",
+                "tools"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "escenario": "E1",
+    "app": "sma_personal",
+    "mensaje": "¿Hoy conviene cambiar euros a pesos colombianos?",
+    "segundos": 49.7,
+    "eventos": [
+      {
+        "t": 14.3,
+        "autor": "coordinador",
+        "tipo": "llamada",
+        "detalle": "transfer_to_agent({\"agent_name\": \"agente_tasas\"})"
+      },
+      {
+        "t": 14.3,
+        "autor": "coordinador",
+        "tipo": "resultado",
+        "detalle": "{\"result\": null}"
+      },
+      {
+        "t": 14.3,
+        "autor": "coordinador",
+        "tipo": "transferencia",
+        "detalle": "→ agente_tasas"
+      },
+      {
+        "t": 29.9,
+        "autor": "agente_tasas",
+        "tipo": "llamada",
+        "detalle": "consultar_tasa_eur_cop({})"
+      },
+      {
+        "t": 30.9,
+        "autor": "agente_tasas",
+        "tipo": "resultado",
+        "detalle": "{\"fecha\": \"2026-11-02\", \"tasa_actual\": 3570.04, \"fuente\": \"TRM (Banco de la República) × EUR/USD (BCE), en vivo\", \"minimo_90d\": 3504.69, \"media_90d\": 3623.19, \"maximo_90d\": 3803.5, \"percentil_actual\": 26, \"conviene_cambiar\": false}"
+      },
+      {
+        "t": 49.7,
+        "autor": "agente_tasas",
+        "tipo": "texto",
+        "detalle": "La tasa actual de EUR a COP hoy es 3570.04, según la fuente TRM (Banco de la República) × EUR/USD (BCE), en vivo. En los últimos 90 días, la tasa ha fluctuado entre 3504.69 (mínimo) y 3803.5 (máximo), con una media de 3623.19. El percentil actual es del 26%, lo que indica que la tasa es baja. No conviene cambiar euros hoy."
+      }
+    ],
+    "estado": {
+      "informe_tasas": "La tasa actual de EUR a COP hoy es 3570.04, según la fuente TRM (Banco de la República) × EUR/USD (BCE), en vivo. En los últimos 90 días, la tasa ha fluctuado entre 3504.69 (mínimo) y 3803.5 (máximo), con una media de 3623.19. El percentil actual es del 26%, lo que indica que la tasa es baja. No conviene cambiar euros hoy."
+    }
+  },
+  {
+    "escenario": "E2",
+    "app": "sma_personal",
+    "mensaje": "Puntúa esta oferta para mí:\nDesarrollador/a Backend Python (remoto, España). Jornada parcial de 25 h/semana. Buscamos experiencia con FastAPI, PostgreSQL e integración de modelos de lenguaje (LLM). Contrato laboral indefinido. Salario según experiencia.",
+    "segundos": 49.9,
+    "eventos": [
+      {
+        "t": 4.5,
+        "autor": "coordinador",
+        "tipo": "llamada",
+        "detalle": "transfer_to_agent({\"agent_name\": \"agente_empleo\"})"
+      },
+      {
+        "t": 4.5,
+        "autor": "coordinador",
+        "tipo": "resultado",
+        "detalle": "{\"result\": null}"
+      },
+      {
+        "t": 4.5,
+        "autor": "coordinador",
+        "tipo": "transferencia",
+        "detalle": "→ agente_empleo"
+      },
+      {
+        "t": 29.3,
+        "autor": "agente_empleo",
+        "tipo": "llamada",
+        "detalle": "puntuar_oferta({\"texto_oferta\": \"Desarrollador/a Backend Python (remoto, España). Jornada parcial de 25 h/semana. Buscamos experiencia )"
+      },
+      {
+        "t": 35.7,
+        "autor": "agente_empleo",
+        "tipo": "resultado",
+        "detalle": "{\"main_role\": \"Desarrollador Backend Python\", \"role_is_technical\": true, \"skill_match\": 8, \"schedule\": \"part_time\", \"weekly_hours\": 25, \"work_mode\": \"remote\", \"red_flags\": false, \"reason\": \"El candidato tiene experiencia en Python y backend que se alinean bien con el puesto\", \"puntuacion_final\": 8, \"modelo\": \"empleo-puntuador-r2-q5-k-m\"}"
+      },
+      {
+        "t": 49.9,
+        "autor": "agente_empleo",
+        "tipo": "texto",
+        "detalle": "El rol de la oferta es **Desarrollador Backend Python**, con una puntuación final de **8/10**. La jornada es **parcial** (25 horas semanales) y la modalidad es **remoto**. El modelo considera que la oferta es adecuada para un candidato con experiencia en Python y backend, y no detecta señales de alerta."
+      }
+    ],
+    "estado": {
+      "informe_empleo": "El rol de la oferta es **Desarrollador Backend Python**, con una puntuación final de **8/10**. La jornada es **parcial** (25 horas semanales) y la modalidad es **remoto**. El modelo considera que la oferta es adecuada para un candidato con experiencia en Python y backend, y no detecta señales de alerta."
+    }
+  },
+  {
+    "escenario": "E3",
+    "app": "sma_personal",
+    "mensaje": "¿Cómo está el servidor donde corren los agentes?",
+    "segundos": 30.2,
+    "eventos": [
+      {
+        "t": 4.1,
+        "autor": "coordinador",
+        "tipo": "llamada",
+        "detalle": "transfer_to_agent({\"agent_name\": \"agente_vigia\"})"
+      },
+      {
+        "t": 4.1,
+        "autor": "coordinador",
+        "tipo": "resultado",
+        "detalle": "{\"result\": null}"
+      },
+      {
+        "t": 4.1,
+        "autor": "coordinador",
+        "tipo": "transferencia",
+        "detalle": "→ agente_vigia"
+      },
+      {
+        "t": 18.6,
+        "autor": "agente_vigia",
+        "tipo": "llamada",
+        "detalle": "estado_sistema({})"
+      },
+      {
+        "t": 19.6,
+        "autor": "agente_vigia",
+        "tipo": "resultado",
+        "detalle": "{\"cpu_pct\": 8.9, \"ram_pct\": 90.4, \"disco_pct\": 86.1, \"ollama_disponible\": true, \"nivel\": \"grave\"}"
+      },
+      {
+        "t": 30.2,
+        "autor": "agente_vigia",
+        "tipo": "texto",
+        "detalle": "El nivel de alerta es \"grave\" debido a que el uso de memoria (90.4%) y disco (86.1%) está muy elevado. Se recomienda revisar el uso de memoria y disco para identificar si hay procesos que consumen recursos innecesariamente."
+      }
+    ],
+    "estado": {
+      "informe_vigia": "El nivel de alerta es \"grave\" debido a que el uso de memoria (90.4%) y disco (86.1%) está muy elevado. Se recomienda revisar el uso de memoria y disco para identificar si hay procesos que consumen recursos innecesariamente."
+    }
+  },
+  {
+    "escenario": "E4",
+    "app": "sma_personal",
+    "mensaje": "¿Me recomiendas una película para esta noche?",
+    "segundos": 4.4,
+    "eventos": [
+      {
+        "t": 4.4,
+        "autor": "coordinador",
+        "tipo": "texto",
+        "detalle": "Ninguno de los agentes especializados en tasa de cambio, empleo o vigilancia puede recomendarte una película."
+      }
+    ],
+    "estado": {}
+  },
+  {
+    "escenario": "E5",
+    "app": "parte_diario",
+    "mensaje": "Genera el parte diario.",
+    "segundos": 100.2,
+    "eventos": [
+      {
+        "t": 7.7,
+        "autor": "agente_tasas",
+        "tipo": "llamada",
+        "detalle": "consultar_tasa_eur_cop({})"
+      },
+      {
+        "t": 11.7,
+        "autor": "agente_tasas",
+        "tipo": "resultado",
+        "detalle": "{\"fecha\": \"2026-11-02\", \"tasa_actual\": 3570.04, \"fuente\": \"TRM (Banco de la República) × EUR/USD (BCE), en vivo\", \"minimo_90d\": 3504.69, \"media_90d\": 3623.19, \"maximo_90d\": 3803.5, \"percentil_actual\": 26, \"conviene_cambiar\": false}"
+      },
+      {
+        "t": 14.5,
+        "autor": "agente_vigia",
+        "tipo": "llamada",
+        "detalle": "estado_sistema({})"
+      },
+      {
+        "t": 15.5,
+        "autor": "agente_vigia",
+        "tipo": "resultado",
+        "detalle": "{\"cpu_pct\": 7.3, \"ram_pct\": 90.6, \"disco_pct\": 86.1, \"ollama_disponible\": true, \"nivel\": \"grave\"}"
+      },
+      {
+        "t": 36.2,
+        "autor": "agente_tasas",
+        "tipo": "texto",
+        "detalle": "La tasa actual de EUR → COP es **3570.04**, según la fuente TRM (Banco de la República) × EUR/USD (BCE), en vivo. En los últimos 90 días, la tasa ha fluctuado entre **3504.69** (mínimo) y **3803.5** (máximo), con una media de **3623.19**. El percentil actual es **26**, lo que indica que la tasa está por debajo del 74% de los valores registrados. No conviene cambiar euros en este momento."
+      },
+      {
+        "t": 44.8,
+        "autor": "agente_vigia",
+        "tipo": "texto",
+        "detalle": "El nivel de alerta es **grave**. El recurso más cargado es la **memoria (90.6%)**. Se recomienda revisar el uso de memoria y asegurarse de que no haya procesos que consuman excesivamente recursos."
+      },
+      {
+        "t": 100.2,
+        "autor": "redactor",
+        "tipo": "texto",
+        "detalle": "**Tasas:**  \nLa tasa actual de EUR → COP es **3570.04**, según la fuente TRM (Banco de la República) × EUR/USD (BCE), en vivo. En los últimos 90 días, la tasa ha fluctuado entre **3504.69** (mínimo) y **3803.5** (máximo), con una media de **3623.19**. El percentil actual es **26**, lo que indica que la tasa está por debajo del 74% de los valores registrados. No conviene cambiar euros en este momento.\n\n**Sistema:**  \nEl nivel de alerta es **grave**. El recurso más cargado es la **memoria (90.6%)**. Se recomienda revisar el uso de memoria y asegurarse de que no haya procesos que consuman excesivamente recursos.\n\n**Acción recomendada:** Revisar el uso de memoria y optimizar procesos que puedan estar consumiendo recursos de forma excesiva."
+      }
+    ],
+    "estado": {
+      "informe_tasas": "La tasa actual de EUR → COP es **3570.04**, según la fuente TRM (Banco de la República) × EUR/USD (BCE), en vivo. En los últimos 90 días, la tasa ha fluctuado entre **3504.69** (mínimo) y **3803.5** (máximo), con una media de **3623.19**. El percentil actual es **26**, lo que indica que la tasa está por debajo del 74% de los valores registrados. No conviene cambiar euros en este momento.",
+      "informe_vigia": "El nivel de alerta es **grave**. El recurso más cargado es la **memoria (90.6%)**. Se recomienda revisar el uso de memoria y asegurarse de que no haya procesos que consuman excesivamente recursos."
+    }
+  }
+]
